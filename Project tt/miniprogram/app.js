@@ -16,11 +16,12 @@ App({
         env: envList[0],
         traceUser: true,
       });
-     // console.log(envList[0])
+     //const time = new Date()
     }
 
     this.globalData = {
-      // random
+      // user id
+
     };
   }
 });
