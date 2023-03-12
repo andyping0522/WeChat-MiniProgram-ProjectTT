@@ -3,7 +3,7 @@
 
   <view class="title">{{greetingMsg}}</view>
 
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
+  <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
 
 
