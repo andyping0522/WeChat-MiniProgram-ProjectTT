@@ -27,8 +27,11 @@ Page({
       daysElapsed: days
     })
     //const today = new Date()
-    //const reminder = await wx.cloud.callFunction({name: 'getReminders'})
-    //console.log(reminder.result.data)
+    const reminders = await wx.cloud.callFunction({name: 'getPendingReminders'})
+    const pendingReminders = reminders.result.data
+    for (var i=0; i<pendingReminders.length; i++) {
+      console.log(pendingReminders[i].title)
+    }
     // load list of events from db
 
     // done
