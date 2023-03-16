@@ -5,6 +5,16 @@
 
   <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
+  <view class="container">
+    <view wx:if="{{reminderList.length > 0}}">
+      <view wx:for="{{reminderList}}" wx:key="_id">
+        {{item.title}}
+        {{item.creator}}
+        {{item.assigned}}
+        {{item.date}}
+      </view>
+    </view>
+  </view>
 
 
   <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>

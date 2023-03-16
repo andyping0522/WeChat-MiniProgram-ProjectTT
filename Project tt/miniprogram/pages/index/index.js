@@ -23,15 +23,21 @@ Page({
     // get days of relationship
     const timeDiff = Math.abs(getApp().globalData.startDate - today)
     const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24))
+    
     this.setData({
       daysElapsed: days
     })
-    //const today = new Date()
+    // load list of events from db
     const reminders = await wx.cloud.callFunction({name: 'getPendingReminders'})
     const pendingReminders = reminders.result.data
-    for (var i=0; i<pendingReminders.length; i++) {
-      console.log(pendingReminders[i].title)
-    }
+
+    
+    this.setData({
+      reminderList: pendingReminders
+    })
+    // for (var i=0; i<pendingReminders.length; i++) {
+    //   console.log(pendingReminders[i].title)
+    // }
     // load list of events from db
 
     // done
