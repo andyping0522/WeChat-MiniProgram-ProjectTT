@@ -1,0 +1,12 @@
+/* This module is referenced from github UxxHans
+https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram/blob/main/miniprogram/pages/Mission/index.wxml
+
+谢谢你，启发了我开发这个，你是我大爹
+ */
+var cutStr = function (str, limit) {
+  return str.length > limit ? str.substring(0, limit) : str
+}
+
+module.exports = {
+  cutStr: cutStr
+}

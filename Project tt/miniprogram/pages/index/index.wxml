@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs module="util" src="./util.wxs" />
 <view class="container">
 
   <view class="title">{{greetingMsg}}</view>
@@ -6,13 +7,31 @@
   <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
   <view class="container">
-    <view wx:if="{{reminderList.length > 0}}">
+    <view wx:if="{{reminderCount > 0}}">
       <view wx:for="{{reminderList}}" wx:key="_id">
-        {{item.title}}
-        {{item.creator}}
-        {{item.assigned}}
-        {{item.date}}
+        目标: {{item.title}}
+        由{{item.creator}}创建
+        {{item.assigned}}记得做完哦！
+        创建于{{util.cutStr(item.date, 10)}}
       </view>
+    </view>
+    <view wx:elif="{{reminderCount < 0}}">
+      正在加载任务列表~
+    </view>
+    <view wx:else>
+      暂无任务，放松一下吧！
+    </view>
+  </view>
+
+  <view class="container">
+    <view wx:if="{{annivCount > 0}}">
+      <view wx:for="{{anniversaryList}}" wx:key="_id">
+        {{item.title}}已经{{item.days}}天啦
+        起始日：{{util.cutStr(item.date, 10)}}
+      </view>
+    </view>
+    <view wx:elif="{{annivCount < 0}}">
+      正在加载纪念日列表~
     </view>
   </view>
 

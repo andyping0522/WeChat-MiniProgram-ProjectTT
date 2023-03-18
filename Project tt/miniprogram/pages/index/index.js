@@ -10,7 +10,9 @@ Page({
     greetingMsg: '',
     reminderList: [],
     anniversaryList: [],
-    daysElapsed: 0
+    daysElapsed: 0,
+    reminderCount: -1,
+    annivCount: -1
   },
 
   async onShow(){
@@ -30,10 +32,21 @@ Page({
     // load list of events from db
     const reminders = await wx.cloud.callFunction({name: 'getPendingReminders'})
     const pendingReminders = reminders.result.data
+    const anniv = await wx.cloud.callFunction({name: "getAnniversaries"})
+    const anniversaries = anniv.result.data
+    //console.log(anniv)
 
-    
+    // calculate days elapsed since start date
+    for (var i=0; i<anniversaries.length; i++) {
+      var serverDate = new Date(anniversaries[i].date)
+      anniversaries[i].days = Math.ceil(Math.abs(serverDate - today)/(1000 * 60 * 60 * 24)) 
+      //console.log(anniversaries[i].days)
+    }
     this.setData({
-      reminderList: pendingReminders
+      reminderList: pendingReminders,
+      reminderCount: pendingReminders.length,
+      anniversaryList: anniversaries,
+      annivCount: anniversaries.length
     })
     // for (var i=0; i<pendingReminders.length; i++) {
     //   console.log(pendingReminders[i].title)
