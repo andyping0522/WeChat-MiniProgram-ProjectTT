@@ -48,12 +48,7 @@ Page({
       anniversaryList: anniversaries,
       annivCount: anniversaries.length
     })
-    // for (var i=0; i<pendingReminders.length; i++) {
-    //   console.log(pendingReminders[i].title)
-    // }
-    // load list of events from db
-
-    // done
+    
   },
 
   
