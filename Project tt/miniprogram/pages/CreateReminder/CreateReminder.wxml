@@ -1,2 +1,14 @@
-<!--pages/CreateReminder/CreateReminder.wxml-->
-<text>pages/CreateReminder/CreateReminder.wxml</text>
+
+<view class="form-group">
+  <view>
+    <view>标题：</view>
+    <input placeholder="任务名是社么" bindinput="onTitleInput" value="{{title}}" />
+    <view class="section_title">选择给谁做</view>
+    <picker mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedTo}}">
+      <view class="picker">
+        已选：{{people[assignedTo]}}
+      </view>
+    </picker>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">添加任务</button>
+  </view>
+</view>

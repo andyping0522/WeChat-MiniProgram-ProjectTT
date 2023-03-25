@@ -16,10 +16,10 @@
     "selectedColor": "#ff99aa",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "test"
+      "text": "主页"
     },{
       "pagePath": "pages/CreateReminder/CreateReminder",
-      "text": "bruh"
+      "text": "添加任务"
     }]
   },
   "sitemapLocation": "sitemap.json",

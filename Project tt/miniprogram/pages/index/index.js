@@ -51,6 +51,12 @@ Page({
     
   },
 
+  async toAddPage() {
+    wx.switchTab({
+      url: '/pages/CreateReminder/CreateReminder'
+    })
+  },
+
   
   
 });

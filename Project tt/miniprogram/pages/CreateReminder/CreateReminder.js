@@ -2,62 +2,72 @@
 Page({
 
   data: {
+    title: "",
+    date: "",
+    createdBy: "",
+    assignedTo: "",
+    people: ["PP", "TT"],
+    person: ""
+  },
+
+
+  onShow(options) {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  onTitleInput(e) {
+    //console.log(e.detail.value)
+    this.setData({
+      title: e.detail.value
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onAssignment(e) {
+    this.setData({
+      assignedTo: e.detail.value,
+      person: this.data.people[e.detail.value]
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    
-  },
+  async onSubmit() {
+    const date_ = new Date()
+    this.setData({
+      date: date_
+    })
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
+    if (this.data.title === "") {
+      wx.showToast({
+        title: "要有标题",
+        icon: "error",
+        duration: 2000
+      })
+      return
+    }
 
-  },
+    if (this.data.assignedTo === "") {
+      wx.showToast({
+        title: "要指定谁完成",
+        icon: "error",
+        duration: 2000
+      })
+      return
+    }
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
+    await wx.cloud.callFunction({name: "AddReminder", data: this.data}).then(
+      () => {
+        wx.showToast({
+          title: '添加成功',
+          icon: 'success',
+          duration: 1000
+        })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../index/index',
+          })
+        }, 1000)
+      }
+    )
 
   }
+
 })

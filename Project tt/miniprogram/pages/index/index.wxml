@@ -21,6 +21,7 @@
     <view wx:else>
       暂无任务，放松一下吧！
     </view>
+    <button hover-class="btn-hover" size="mini" bindtap="toAddPage">添加任务</button>
   </view>
 
   <view class="container">
