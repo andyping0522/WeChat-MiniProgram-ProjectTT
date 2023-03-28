@@ -1,0 +1,15 @@
+<!--pages/AddAnniv/AddAnniv.wxml-->
+
+<view class="form-group">
+  <view>
+    <view>标题：</view>
+    <input bindinput="onTitleInput" value="{{title}}" />
+    <view class="section_title">选择纪念日日期</view>
+    <picker mode="date" bindchange="onDateInput" value="{{date}}">
+      <view class="picker">
+        已选：{{date}}
+      </view>
+    </picker>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">保存纪念日</button>
+  </view>
+</view>

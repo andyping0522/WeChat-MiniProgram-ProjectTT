@@ -37,8 +37,6 @@
       正在加载纪念日列表~
     </view>
   </view>
-
-
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
+  <button hover-class="btn-hover" size="mini" bindtap="toAddAnnivPage">添加纪念日</button>
 
 </view>
