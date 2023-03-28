@@ -51,11 +51,22 @@ Page({
     
   },
 
-  async toAddPage() {
+  async toAddReminderPage() {
     wx.switchTab({
       url: '/pages/CreateReminder/CreateReminder'
     })
   },
+
+  async toEditReminderPage(element) {
+    
+    //console.log("clicked")
+    const reminderIndex = element.currentTarget.dataset.index
+    const reminder = this.data.reminderList[reminderIndex]
+    //console.log(reminder._id)
+    wx.navigateTo({
+      url: '../EditReminder/EditReminder?id=' + reminder._id,
+    })
+  }
 
   
   

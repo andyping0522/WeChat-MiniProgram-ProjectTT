@@ -8,11 +8,13 @@
 
   <view class="container">
     <view wx:if="{{reminderCount > 0}}">
-      <view wx:for="{{reminderList}}" wx:key="_id">
-        目标: {{item.title}}
-        由{{item.creator}}创建
-        {{item.assigned}}记得做完哦！
-        创建于{{util.cutStr(item.date, 10)}}
+      <view wx:for="{{reminderList}}" wx:key="index">
+        <view bindtap="toEditReminderPage" data-index="{{index}}">
+          目标: {{item.title}}
+          {{item.assigned}}记得做完哦！
+          创建于{{util.cutStr(item.date, 10)}}
+        </view>
+        
       </view>
     </view>
     <view wx:elif="{{reminderCount < 0}}">
@@ -21,7 +23,7 @@
     <view wx:else>
       暂无任务，放松一下吧！
     </view>
-    <button hover-class="btn-hover" size="mini" bindtap="toAddPage">添加任务</button>
+    <button hover-class="btn-hover" size="mini" bindtap="toAddReminderPage">添加任务</button>
   </view>
 
   <view class="container">

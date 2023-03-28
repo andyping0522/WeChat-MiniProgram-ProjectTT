@@ -1,0 +1,21 @@
+<!--pages/EditReminder/EditReminder.wxml-->
+<view class="form-group">
+  <view>
+    <view>标题：</view>
+    <input placeholder="任务名是社么" bindinput="onTitleInput" value="{{title}}" />
+    <view class="section_title">选择给谁做</view>
+    <picker mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedIndex}}">
+      <view class="picker">
+        <view wx:if="{{assignedIndex == -1}}">
+          已选：
+        </view>
+        <view wx:else>
+          已选：{{people[assignedIndex]}}
+        </view>
+      </view>
+    </picker>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmitUpdate">更新任务</button>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmitComplete">完成任务</button>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmitCancel">返回</button>
+  </view>
+</view>
