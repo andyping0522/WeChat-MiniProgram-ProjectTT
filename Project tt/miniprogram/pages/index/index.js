@@ -75,6 +75,7 @@ Page({
   async toEditAnnivPage(element) {
     const annivIndex = element.currentTarget.dataset.index
     const anniv = this.data.anniversaryList[annivIndex]
+  
     wx.navigateTo({
       url: '../EditAnniv/EditAnniv?id=' + anniv._id,
     })

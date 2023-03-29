@@ -22,51 +22,43 @@ Page({
   },
 
   /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady() {
-
-  },
-
-  /**
    * Lifecycle function--Called when page show
    */
   onShow() {
 
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide() {
-
+  onDateInput(e) {
+    //console.log(e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload() {
-
+  onTitleInput(e) {
+    //console.log(e.detail.value)
+    this.setData({
+      title: e.detail.value
+    })
   },
+  
+  async onSubmit() {
+    if (this.data.title === "") {
 
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh() {
+      wx.showToast({
+        title: "要有标题",
+        icon: "error",
+        duration: 2000
+      })
+      return
+    }
 
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage() {
-
+    if (this.data.date === "") {
+      wx.showToast({
+        title: "要有日期",
+        icon: "error",
+        duration: 2000
+      })
+    }
   }
 })
