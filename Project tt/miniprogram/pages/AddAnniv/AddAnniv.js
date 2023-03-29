@@ -32,6 +32,38 @@ Page({
 
   async onSubmit() {
     // submit the add anniversary request
-  }
+    if (this.data.title === "") {
 
+      wx.showToast({
+        title: "要有标题",
+        icon: "error",
+        duration: 2000
+      })
+      return
+    }
+
+    if (this.data.date === "") {
+      wx.showToast({
+        title: "要有日期",
+        icon: "error",
+        duration: 2000
+      })
+    }
+
+    await wx.cloud.callFunction({
+      name: "AddAnniv",
+      data: this.data
+    }).then(() => {
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 1000
+      })
+      setTimeout(function () {
+        wx.switchTab({
+          url: '../index/index',
+        })
+      }, 1000)
+    })
+  }
 })
