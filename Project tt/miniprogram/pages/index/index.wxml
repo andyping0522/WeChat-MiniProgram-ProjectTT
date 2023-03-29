@@ -28,9 +28,20 @@
 
   <view class="container">
     <view wx:if="{{annivCount > 0}}">
-      <view wx:for="{{anniversaryList}}" wx:key="_id">
-        {{item.title}}已经{{item.days}}天啦
-        起始日：{{util.cutStr(item.date, 10)}}
+      <view wx:for="{{anniversaryList}}" wx:key="index">
+        <view bindtap="toEditAnnivPage" data-index="index">
+        <view wx:if="{{item.days < 0}}">
+          {{item.title}}已经{{-item.days}}天啦
+          起始日：{{util.cutStr(item.date, 10)}}
+        </view>
+        <view wx:elif="{{item.days > 0}}">
+          {{item.title}}还有{{item.days}}天哦
+          目标日：{{util.cutStr(item.date, 10)}}
+        </view>
+        <view wx:else>
+          {{item.title}}就是今天！
+        </view>
+        </view>
       </view>
     </view>
     <view wx:elif="{{annivCount < 0}}">

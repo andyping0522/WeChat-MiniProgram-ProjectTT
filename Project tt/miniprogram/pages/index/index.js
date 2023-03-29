@@ -39,7 +39,7 @@ Page({
     // calculate days elapsed since start date
     for (var i=0; i<anniversaries.length; i++) {
       var serverDate = new Date(anniversaries[i].date)
-      anniversaries[i].days = Math.ceil(Math.abs(serverDate - today)/(1000 * 60 * 60 * 24)) 
+      anniversaries[i].days = Math.ceil((serverDate - today)/(1000 * 60 * 60 * 24)) 
       //console.log(anniversaries[i].days)
     }
     this.setData({
@@ -69,6 +69,14 @@ Page({
   async toAddAnnivPage() {
     wx.navigateTo({
       url: '../AddAnniv/AddAnniv',
+    })
+  },
+
+  async toEditAnnivPage(element) {
+    const annivIndex = element.currentTarget.dataset.index
+    const anniv = this.data.anniversaryList[annivIndex]
+    wx.navigateTo({
+      url: '../EditAnniv/EditAnniv?id=' + anniv._id,
     })
   }
 

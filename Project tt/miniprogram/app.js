@@ -20,7 +20,7 @@ App({
     }
 
     this.globalData = {
-      startDate: new Date("2023-02-18T00:00:00.106Z")
+      startDate: new Date("2023-02-19")
     };
   }
 });
