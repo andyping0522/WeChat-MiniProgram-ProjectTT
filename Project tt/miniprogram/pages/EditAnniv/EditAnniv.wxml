@@ -9,6 +9,8 @@
         已选：{{date}}
       </view>
     </picker>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">保存纪念日</button>
+    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">更新纪念日</button>
+    <button hover-class="btn-hover" size="mini" bindtap="onDelete">删除纪念日</button>
+    <button hover-class="btn-hover" size="mini" bindtap="onCancel">返回</button>
   </view>
 </view>

@@ -1,4 +1,5 @@
 // pages/EditAnniv/EditAnniv.js
+
 Page({
 
   /**
@@ -21,11 +22,26 @@ Page({
     }
   },
 
+  cutStr(str, limit) {
+    return str.length > limit ? str.substring(0, limit) : str
+  },
+
   /**
    * Lifecycle function--Called when page show
    */
-  onShow() {
-
+  async onShow() {
+    if (this.data.id.length > 0) {
+      //console.log(this.data.id)
+      await wx.cloud.callFunction({
+        name: "getAnnivById",
+        data: this.data
+      }).then(data => {
+        this.setData({
+          title: data.result.data[0].title,
+          date: this.cutStr(data.result.data[0].date, 10)
+        })
+      })
+    }
   },
 
   onDateInput(e) {
@@ -41,7 +57,7 @@ Page({
       title: e.detail.value
     })
   },
-  
+
   async onSubmit() {
     if (this.data.title === "") {
 
@@ -60,5 +76,45 @@ Page({
         duration: 2000
       })
     }
+    await wx.cloud.callFunction({name: "EditAnniv", data: this.data}).then(
+      () => {
+        wx.showToast({
+          title: '更新成功',
+          icon: 'success',
+          duration: 1000
+        })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../index/index',
+          })
+        }, 1000)
+      }
+    )
+  },
+
+  async onDelete() {
+    await wx.cloud.callFunction({name: "DeleteAnniv", data: this.data}).then(
+      () => {
+        wx.showToast({
+          title: '已删除',
+          icon: 'success',
+          duration: 1000
+        })
+        setTimeout(function () {
+          wx.switchTab({
+            url: '../index/index',
+          })
+        }, 1000)
+      }
+    )
+  },
+
+  /**
+   * Cancel update, go back to main page
+   */
+  async onCancel() {
+    wx.switchTab({
+      url: '../index/index',
+    })
   }
 })
