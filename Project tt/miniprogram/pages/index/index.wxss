@@ -6,20 +6,14 @@ page {
   padding-bottom: 60rpx;
 }
 
-.title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 44rpx;
-  margin-bottom: 40rpx;
-}
 
 .top_tip {
+  margin-top: 10px;
   font-size: 28rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: #888888;
-  margin-bottom: 28rpx;
+  margin-bottom: 38rpx;
 }
 
 .power {
@@ -91,4 +85,58 @@ page {
   color: rgba(0, 0, 0, 0.4);
   font-size: 24rpx;
   margin-top: 25%;
+}
+
+.reminder {
+  display: flex;
+  width: 290px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgba(250, 8, 129, 0.219);
+  margin-bottom: 5px;
+  justify-content: space-around;
+}
+
+.created, .assigned {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 2px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.app-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  /* margin-left: 10px */
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  
+  /* margin-left: 120px; */
+}
+
+.reminder-heading {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  align-self: start;
 }

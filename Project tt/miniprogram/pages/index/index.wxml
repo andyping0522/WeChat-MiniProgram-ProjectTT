@@ -2,17 +2,26 @@
 <wxs module="util" src="./util.wxs" />
 <view class="container">
 
-  <view class="title">{{greetingMsg}}</view>
+  <view class="app-title">{{greetingMsg}}</view>
 
   <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
   <view class="container">
+    <view class="reminder-heading">
+      待完成的事项
+    </view>
     <view wx:if="{{reminderCount > 0}}">
       <view wx:for="{{reminderList}}" wx:key="index">
-        <view bindtap="toEditReminderPage" data-index="{{index}}">
-          目标: {{item.title}}
-          {{item.assigned}}记得做完哦！
-          创建于{{util.cutStr(item.date, 10)}}
+        <view class="reminder" bindtap="toEditReminderPage" data-index="{{index}}">
+          <view class="info">
+          <view class="title">{{item.title}}</view>
+          <view class="assigned">{{item.assigned}}记得做完哦！</view>
+          <view class="created">创建于{{util.cutStr(item.date, 10)}}</view>
+          </view>
+          <view>
+            <image class="icon" wx:if="{{item.assigned=== 'PP'}}" mode="widthFix" src="images/pp.jpg"/>
+            <image class="icon" wx:if="{{item.assigned=== 'TT'}}" mode="widthFix" src="images/tt.jpg"/>
+          </view>
         </view>
         
       </view>
