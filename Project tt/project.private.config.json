@@ -1,6 +1,7 @@
 {
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "autoAudits": false
   },
   "condition": {
     "miniprogram": {

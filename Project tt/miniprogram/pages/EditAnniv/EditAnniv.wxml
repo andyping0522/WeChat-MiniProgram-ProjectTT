@@ -1,16 +1,27 @@
 <!--pages/EditAnniv/EditAnniv.wxml-->
+<image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
+<view class="container" >
+<form>
 <view class="form-group">
-  <view>
-    <view>标题：</view>
-    <input bindinput="onTitleInput" value="{{title}}" />
-    <view class="section_title">选择纪念日日期</view>
-    <picker mode="date" bindchange="onDateInput" value="{{date}}">
-      <view class="picker">
+  
+    <label for="title">标题：</label>
+    <input type="text" bindinput="onTitleInput" value="{{title}}" />
+  </view>
+  <view class="form-group">
+    <view class="picker-container">
+    <label for="title"> 选择纪念日日期</label>
+    <picker class="my-picker" mode="date" bindchange="onDateInput" value="{{date}}">
+      <view class="picker-label">
         已选：{{date}}
       </view>
     </picker>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">更新纪念日</button>
-    <button hover-class="btn-hover" size="mini" bindtap="onDelete">删除纪念日</button>
-    <button hover-class="btn-hover" size="mini" bindtap="onCancel">返回</button>
+    </view>
   </view>
+
+</form>
 </view>
+
+  <button class="submit-btn" bindtap="onSubmit">更新纪念日</button>
+  <button class="delete-btn" hover-class="btn-hover" bindtap="onDelete">删除纪念日</button>
+  <button class="cancel-btn" bindtap="onCancel">返回</button>  
+
