@@ -1,14 +1,23 @@
+<image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
+<view class="container">
 
+<form>
 <view class="form-group">
   <view>
-    <view>标题：</view>
-    <input placeholder="任务名是社么" bindinput="onTitleInput" value="{{title}}" />
-    <view class="section_title">选择给谁做</view>
-    <picker mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedTo}}">
-      <view class="picker">
-        已选：{{people[assignedTo]}}
+    <label for="title">标题：</label>
+    <input type="text" bindinput="onTitleInput" value="{{title}}" />
+  </view>
+</view>
+    <view class="form-group">
+    <label for="title">选择给谁做</label>
+    <view class="picker-container">
+    <picker class="my-picker" mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedTo}}">
+      <view class="picker-label">
+        点我选择！ 已选：{{people[assignedTo]}}
       </view>
     </picker>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmit">添加任务</button>
-  </view>
+    </view>
+    </view>
+    <button class="submit-btn" bindtap="onSubmit">添加任务</button>
+</form> 
 </view>

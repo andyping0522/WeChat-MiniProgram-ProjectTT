@@ -1,1 +1,88 @@
 /* pages/CreateReminder/CreateReminder.wxss */
+.form-group {
+  margin-top: 20px;
+  margin-bottom: 42px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  height: 28px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.picker-container {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* .my-picker {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  background-color: white;
+} */
+
+.my-picker::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.my-picker::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.picker-label {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 180px;
+  height: 24px;
+  margin-top: 15px;
+  /* transform: translateY(-50%); */
+  background-color: white;
+  padding: 0 8px;
+  font-size: 14px;
+  text-align: center;
+  color: #aaa;
+}
+
+.submit-btn {
+  background-color: #ff99aa;
+  color: black;
+  padding: 8px 12px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .base {
+  width: 80%;
+  height: 80%;
+} */
+
+.header-img {
+  width: 100%;
+  height:max-content
+}
