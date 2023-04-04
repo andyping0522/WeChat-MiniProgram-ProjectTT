@@ -7,10 +7,10 @@
   <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
   <view class="container">
-    <view class="reminder-heading">
-      待完成的事项
-    </view>
     <view wx:if="{{reminderCount > 0}}">
+      <view class="reminder-heading">
+      <view>待完成的事项</view>
+    </view>
       <view wx:for="{{reminderList}}" wx:key="index">
         <view class="reminder" bindtap="toEditReminderPage" data-index="{{index}}">
           <view class="info">
@@ -32,24 +32,32 @@
     <view wx:else>
       暂无任务，放松一下吧！
     </view>
-    <button hover-class="btn-hover" size="mini" bindtap="toAddReminderPage">添加任务</button>
+    <button class="reminder-btn" bindtap="toAddReminderPage">添加任务</button>
   </view>
 
   <view class="container">
+    <view class="reminder-heading">值得纪念的日子：</view>
     <view wx:if="{{annivCount > 0}}">
       <view wx:for="{{anniversaryList}}" wx:key="index">
-        <view bindtap="toEditAnnivPage" data-index="{{index}}">
+        <view class="reminder" bindtap="toEditAnnivPage" data-index="{{index}}">
+        <view class="info">
         <view wx:if="{{item.days < 0}}">
-          {{item.title}}已经{{-item.days}}天啦
-          起始日：{{util.cutStr(item.date, 10)}}
+          <view class="title">{{item.title}}</view>
+          <view class="assigned">已经过去{{-item.days}}天啦</view>
+          <view class="created">起始日：{{util.cutStr(item.date, 10)}}</view>
         </view>
         <view wx:elif="{{item.days > 0}}">
-          {{item.title}}还有{{item.days}}天哦
-          目标日：{{util.cutStr(item.date, 10)}}
+          <view class="title">{{item.title}}</view>
+          <view class="assigned">还有{{item.days}}天噢</view>
+          <view class="created">目标日：{{util.cutStr(item.date, 10)}}</view>
         </view>
         <view wx:else>
-          {{item.title}}就是今天！
+          <view class="title">{{item.title}}</view>
+          <view class="assigned">就是今天！</view>
+          <view class="created">目标日：{{util.cutStr(item.date, 10)}}</view>
         </view>
+        </view>
+        <image class="icon" mode="widthFix" src="images/hotpot.png"/>
         </view>
       </view>
     </view>
@@ -57,6 +65,6 @@
       正在加载纪念日列表~
     </view>
   </view>
-  <button hover-class="btn-hover" size="mini" bindtap="toAddAnnivPage">添加纪念日</button>
+  <button class="reminder-btn" bindtap="toAddAnnivPage">添加纪念日</button>
 
 </view>
