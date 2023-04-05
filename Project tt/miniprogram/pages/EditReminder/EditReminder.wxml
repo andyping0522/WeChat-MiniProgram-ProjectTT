@@ -1,21 +1,32 @@
 <!--pages/EditReminder/EditReminder.wxml-->
+<image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
+<view class="container">
+<view class="heading">
+  编辑事项
+</view>
+<form>
 <view class="form-group">
-  <view>
-    <view>标题：</view>
-    <input placeholder="任务名是社么" bindinput="onTitleInput" value="{{title}}" />
-    <view class="section_title">选择给谁做</view>
-    <picker mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedIndex}}">
-      <view class="picker">
+
+    <label for="title">标题：</label>
+    <input type="text" bindinput="onTitleInput" value="{{title}}" />
+    
+</view>
+<view class="form-group">
+  <label for="title">选择给谁做</label>
+  <view class="picker-container">
+    <picker class="my-picker" mode="selector" range="{{people}}" bindchange="onAssignment" value="{{assignedIndex}}">
+      <view>
         <view wx:if="{{assignedIndex == -1}}">
-          已选：
+          <view class="picker-label">已选：</view>
         </view>
         <view wx:else>
-          已选：{{people[assignedIndex]}}
+          <view class="picker-label">已选：{{people[assignedIndex]}}</view>
         </view>
       </view>
     </picker>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmitUpdate">更新任务</button>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmitComplete">完成任务</button>
-    <button hover-class="btn-hover" size="mini" bindtap="onSubmitCancel">返回</button>
   </view>
+  </view>
+</form>
+  <button class="submit-btn" bindtap="onSubmitUpdate">更新任务</button>
+  <button class="delete-btn" bindtap="onSubmitComplete">完成任务</button>
 </view>

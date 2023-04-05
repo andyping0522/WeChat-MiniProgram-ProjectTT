@@ -77,13 +77,6 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-
-
-/* .base {
-  width: 80%;
-  height: 80%;
-} */
-
 .header-img {
   width: 100%;
   height:max-content

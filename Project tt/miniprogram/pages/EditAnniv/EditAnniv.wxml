@@ -1,6 +1,9 @@
 <!--pages/EditAnniv/EditAnniv.wxml-->
 <image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
 <view class="container" >
+<view class="heading">
+  编辑纪念日
+</view>
 <form>
 <view class="form-group">
   
@@ -23,5 +26,4 @@
 
   <button class="submit-btn" bindtap="onSubmit">更新纪念日</button>
   <button class="delete-btn" hover-class="btn-hover" bindtap="onDelete">删除纪念日</button>
-  <button class="cancel-btn" bindtap="onCancel">返回</button>  
 
