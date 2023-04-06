@@ -13,20 +13,6 @@
     "navigationBarTitleText": "tt和pp 的甜蜜空间",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-    "color": "1a1a1a",
-    "selectedColor": "#ff99aa",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "主页"
-      },
-      {
-        "pagePath": "pages/CreateReminder/CreateReminder",
-        "text": "添加任务"
-      }
-    ]
-  },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

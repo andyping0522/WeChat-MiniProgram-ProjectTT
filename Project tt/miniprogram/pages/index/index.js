@@ -16,7 +16,8 @@ Page({
     key: "18e9629ea2de4a7ea21c5821acb80cca",
     city_code: 101270101,
     weather: {},
-    weather_now: {}
+    weather_now: {},
+    ready: false
   },
 
   async onLoad() {
@@ -60,7 +61,7 @@ Page({
   },
 
   async toAddReminderPage() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/CreateReminder/CreateReminder'
     })
   },
@@ -116,7 +117,8 @@ Page({
       success: (res) => {
         //console.log(res)
         this.setData({
-          weather_now: res.data.now
+          weather_now: res.data.now,
+          ready: true
         })
       } 
     })

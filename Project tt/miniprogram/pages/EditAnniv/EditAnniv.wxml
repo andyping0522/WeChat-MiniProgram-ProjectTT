@@ -1,5 +1,5 @@
 <!--pages/EditAnniv/EditAnniv.wxml-->
-<image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
+<image class="header-img" src="../../images/naxienian1.jpg" mode="widthFix"/>
 <view class="container" >
 <view class="heading">
   编辑纪念日

@@ -3,8 +3,7 @@
 <view class="container">
 
   <view class="app-title">{{greetingMsg}}</view>
-
-  <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
+  <image class="header-img" src="../../images/caomeixiong.jpg" mode="widthFix"/>
 
 
   <view class="container">
@@ -19,7 +18,7 @@
     <view class="created">{{weather.textDay}}转{{weather.textNight}}</view>
     </view>
     <view>
-      <image class="icon" src="./icons/{{weather_now.icon}}.svg" />
+      <image wx:if="{{ready}}" class="icon" src="../../icons/{{weather_now.icon}}.svg" />
     </view>
     </view>
     </view>

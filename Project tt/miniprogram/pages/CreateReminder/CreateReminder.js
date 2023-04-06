@@ -61,7 +61,7 @@ Page({
           duration: 1000
         })
         setTimeout(function () {
-          wx.switchTab({
+          wx.navigateTo({
             url: '../index/index',
           })
         }, 1000)

@@ -6,9 +6,13 @@ page {
   padding-bottom: 60rpx;
 }
 
+.header-img {
+  width: 100%;
+  height:max-content
+}
 
 .top_tip {
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 28rpx;
   font-family: PingFang SC;
   font-weight: 400;
@@ -112,9 +116,9 @@ page {
 }
 
 .app-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 
