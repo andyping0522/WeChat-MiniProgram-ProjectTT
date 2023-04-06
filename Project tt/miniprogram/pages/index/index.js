@@ -12,7 +12,15 @@ Page({
     anniversaryList: [],
     daysElapsed: 0,
     reminderCount: -1,
-    annivCount: -1
+    annivCount: -1,
+    key: "18e9629ea2de4a7ea21c5821acb80cca",
+    city_code: 101270101,
+    weather: {},
+    weather_now: {}
+  },
+
+  async onLoad() {
+    this.getWeather()
   },
 
   async onShow(){
@@ -78,6 +86,39 @@ Page({
   
     wx.navigateTo({
       url: '../EditAnniv/EditAnniv?id=' + anniv._id,
+    })
+  },
+
+  async getWeather() {
+    // get weather info for the day
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/3d",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: this.data.city_code
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weather: res.data.daily[0]
+        })
+      }
+    })
+
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/now",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: this.data.city_code
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weather_now: res.data.now
+        })
+      } 
     })
   }
 

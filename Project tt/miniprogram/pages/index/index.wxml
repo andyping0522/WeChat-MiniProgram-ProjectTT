@@ -6,7 +6,23 @@
 
   <view class="top_tip">我们在一起已经{{daysElapsed}}天啦</view>
 
+
   <view class="container">
+    <view class="reminder-heading">天气:</view>
+    <view class="weather-container">
+    <view class="info-container">
+    <view class="info">
+    <view class="title">
+      成都今日天气：
+    </view>
+    <view class="assigned">气温：{{weather.tempMin}} - {{weather.tempMax}}摄氏度</view>
+    <view class="created">{{weather.textDay}}转{{weather.textNight}}</view>
+    </view>
+    <view>
+      <image class="icon" src="./icons/{{weather_now.icon}}.svg" />
+    </view>
+    </view>
+    </view>
     <view wx:if="{{reminderCount > 0}}">
       <view class="reminder-heading">
       <view>待完成的事项</view>
