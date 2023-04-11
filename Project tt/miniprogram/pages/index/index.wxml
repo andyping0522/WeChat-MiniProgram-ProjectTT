@@ -4,7 +4,7 @@
 
   <view class="app-title">{{greetingMsg}}</view>
   <image class="header-img" src="../../images/caomeixiong.jpg" mode="widthFix"/>
-
+  <view wx:if="{{displayCountdown == 1}}" class="top_tip">还有{{countdown}}就下班啦</view>
 
   <view class="container">
     <view class="reminder-heading">天气:</view>

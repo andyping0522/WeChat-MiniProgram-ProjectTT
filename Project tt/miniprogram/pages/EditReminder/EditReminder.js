@@ -100,7 +100,7 @@ Page({
           duration: 1000
         })
         setTimeout(function () {
-          wx.navigateTo({
+          wx.switchTab({
             url: '../index/index',
           })
         }, 1000)
@@ -122,7 +122,7 @@ Page({
           duration: 1000
         })
         setTimeout(function () {
-          wx.navigateTo({
+          wx.switchTab({
             url: '../index/index',
           })
         }, 1000)

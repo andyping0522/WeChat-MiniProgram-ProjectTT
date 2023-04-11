@@ -8,5 +8,5 @@ const db = cloud.database()
 exports.main = async(event, context) => {
   return await db.collection('Reminders').where({
     'state': 'pending'
-  }).get()
+  }).orderBy('date', 'desc').get()
 }

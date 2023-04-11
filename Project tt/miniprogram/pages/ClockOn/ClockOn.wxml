@@ -1,0 +1,20 @@
+<image class="header-img" src="../../images/codyandmay.jpg" mode="widthFix"/>
+<view class="container">
+  <view class="heading">
+    打卡上班！
+  </view>
+<form>
+  <view class="form-group">
+    <view class="picker-container">
+      <label for="title"> 选择打卡时间</label>
+    <picker class="my-picker" mode="time" bindchange="onTimeInput" value="{{time}}">
+      <view class="picker-label">
+        已选：{{time}}
+      </view>
+    </picker>
+    </view>
+  </view>
+    <button class="submit-btn" bindtap="onSubmit">{{btnText}}</button>
+
+</form>
+</view>

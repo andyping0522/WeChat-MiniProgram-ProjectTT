@@ -3,25 +3,26 @@
 const { envList } = require('../../envList.js');
 const greeting = require('./greeting.js')
 const today = new Date()
-//const startDate = new Date("2023-02-18T00:00:00.106Z");
+
 
 Page({
   data: {
     greetingMsg: '',
     reminderList: [],
     anniversaryList: [],
-    daysElapsed: 0,
     reminderCount: -1,
     annivCount: -1,
     key: "18e9629ea2de4a7ea21c5821acb80cca",
     city_code: 101270101,
     weather: {},
     weather_now: {},
-    ready: false
+    ready: false,
+    countdown: "",
+    displayCountdown: 0
   },
 
   async onLoad() {
-    this.getWeather()
+    
   },
 
   async onShow(){
@@ -30,14 +31,9 @@ Page({
     this.setData({
       greetingMsg: _greetingMsg
     })
+    this.getCountDown()
+    this.getWeather()
 
-    // get days of relationship
-    const timeDiff = Math.abs(getApp().globalData.startDate - today)
-    const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24))
-    
-    this.setData({
-      daysElapsed: days
-    })
     // load list of events from db
     const reminders = await wx.cloud.callFunction({name: 'getPendingReminders'})
     const pendingReminders = reminders.result.data
@@ -122,6 +118,27 @@ Page({
         })
       } 
     })
+  },
+
+  async getCountDown() {
+    var clockOffTime = wx.getStorageSync('clockOffTime');
+    var isClockedOn = wx.getStorageSync('isClockedOn')
+    //console.log(isClockedOn)
+    if (isClockedOn) {
+      //console.log(clockOffTime)
+      var timeRemaining = clockOffTime - new Date().getTime();
+      if (timeRemaining <= 0) {
+        wx.setStorageSync('isClockedOn', false)
+        wx.setStorageSync('clockOffTime', null)
+      } else {
+        var hours = Math.floor(timeRemaining / 3600000);
+        var minutes = Math.floor((timeRemaining % 3600000) / 60000);
+        this.setData({
+          displayCountdown: 1,
+          countdown: hours + ' 小时 ' + minutes + ' 分钟 '
+        });
+      }
+    }
   }
 
   
