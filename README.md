@@ -5,9 +5,9 @@
 This is a personal project that creates a Wechat Mini program that provides a platform to interact with my partner. This platform allows both of us to keep track of our to-do lists and memorable days, as well as displaying weather info and a countdown towards the end of her shift. 
 <br><br>
 ## About Wechat Mini Programs
-Wechat Mini Programs are 'sub-applications' that are embedded within one of most popular Chinese social media Wechat. They enable users to have fast and convenient access to third-party services without having to download the app on their systems. The program mainly uses Javascript, WXML
+Wechat Mini Programs are 'sub-applications' that are embedded within one of the most popular Chinese social media Wechat. They enable users to have fast and convenient access to third-party services without having to download the app on their systems. The program mainly uses Javascript, WXML
 
-The development framework of the WeChat Mini Program is based on the MINA framework. It  mainly includes app.json, app.js, and app.wxss. app.json is the global configuration of the entire applet. index.js is the logic processing code, which is mainly used to define the data of the page; index.wxml is
+The development framework of the WeChat Mini Program is based on the MINA framework. It mainly includes app.json, app.js, and app.wxss. app.json is the global configuration of the entire applet. index.js is the logic processing code, which is mainly used to define the data of the page; index.wxml is
 the layout file, which is a variation of HTML for display; Index.wxss is a style
 sheet that is also a slight variation of CSS[1]. 
 <br><br>
@@ -27,7 +27,7 @@ Users can create memorable days that consist a title, the date of the event. The
 ![](./pictures/memorable_days.png)
 <br><br>
 ### Clock on and countdown
-She has a fixed 9.5 hours shift on weekdays. She can choose the time that she clocked on and a countdown towards her end of shift will display on the home page, right under the Lotso image. 
+She has a fixed 9.5 hours shift on weekdays. She can choose the time that she clocked on and a countdown towards end of her shift will display on the home page, right under the Lotso image. 
 ![](./pictures/clockon.jpg)
 
 <br><br>
@@ -55,7 +55,8 @@ Added the clock on and countdown feature and changed the reminder display order.
 This project is inspired by Junyi Han (UxxHans on github),
 Rainbow-Cats-Personal-WeChat-MiniProgram, availabe at: https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram <br>
 
-With special thanks to Roy Gao for providing Mini Program developer account. Most importantly, thanks for her continous support and love. 
+With special thanks to Roy Gao for providing Mini Program developer account. <br><br>
+Most importantly, thanks for her continous support and love. 
 
 
 <br><br>
@@ -117,8 +118,9 @@ NOTE: below is a Chinese version of the README
 
 ## 鸣谢
 
-这个项目深受Junyi Han (github用户名UxxHans)启发，rainbow-Cats-Personal-WeChat-MiniProgram, availabe at: https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram<br>
-也感谢Roy Gao帮助我创建小程序开发账号。最重要的是，感谢她一直以来的陪伴和支持。
+这个项目深受Junyi Han (github用户名UxxHans)启发，rainbow-Cats-Personal-WeChat-MiniProgram, availabe at: https://github.com/UxxHans/Rainbow-Cats-Personal-WeChat-MiniProgram<br><br>
+也感谢Roy Gao帮助我创建小程序开发账号。<br><br>
+最重要的是，感谢我的tt一直以来的陪伴和支持。
 
 
 <br><br>
