@@ -48,7 +48,7 @@ Added the clock on and countdown feature and changed the reminder display order.
 ## Future Improvements
 - Consider using components instead of new pages for reminders/memorable days as a lot of code are redundant. I was new to Wechat mini program development and I didn't realise I could generalise similiar objects as components as in React JS. 
 - Consider using dynamic table names when calling backend databases, instead of creating new cloud functions for every database table. Cloud functions are hard to modify as it would take time to upload and deploy remotely. Simply pass the table name as a variable will do the job. 
-- She is UI designer and she has suggested a better design that incorporates more elements that reflect our relationship
+- She is an UI designer and she has suggested a better design that incorporates more elements that reflect our relationship
 <br><br>
 
 ## Acknowledgements
