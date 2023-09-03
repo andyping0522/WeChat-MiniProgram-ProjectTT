@@ -21,6 +21,30 @@
       <image wx:if="{{ready}}" class="icon" src="../../icons/{{weather_now.icon}}.svg" />
     </view>
     </view>
+    <view class="info-container">
+    <view class="info">
+    <view class="title">
+      金牛区天气：
+    </view>
+    <view class="assigned">气温：{{weatherJinniu.tempMin}} - {{weatherJinniu.tempMax}}摄氏度</view>
+    <view class="created">{{weatherJinniu.textDay}}转{{weatherJinniu.textNight}}</view>
+    </view>
+    <view>
+      <image wx:if="{{ready}}" class="icon" src="../../icons/{{weatherJinniuNow.icon}}.svg" />
+    </view>
+    </view>
+    <view class="info-container">
+    <view class="info">
+    <view class="title">
+      郫都区天气：
+    </view>
+    <view class="assigned">气温：{{weatherPidu.tempMin}} - {{weatherPidu.tempMax}}摄氏度</view>
+    <view class="created">{{weatherPidu.textDay}}转{{weatherPidu.textNight}}</view>
+    </view>
+    <view>
+      <image wx:if="{{ready}}" class="icon" src="../../icons/{{weatherPiduNow.icon}}.svg" />
+    </view>
+    </view>
     </view>
     <view wx:if="{{reminderCount > 0}}">
       <view class="reminder-heading">

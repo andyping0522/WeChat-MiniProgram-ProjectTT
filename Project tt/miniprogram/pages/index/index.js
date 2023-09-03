@@ -18,7 +18,11 @@ Page({
     weather_now: {},
     ready: false,
     countdown: "",
-    displayCountdown: 0
+    displayCountdown: 0,
+    weatherPidu: {},
+    weatherPiduNow: {},
+    weatherJinniu: {},
+    weatherJinniuNow: {}
   },
 
   async onLoad() {
@@ -87,7 +91,7 @@ Page({
   },
 
   async getWeather() {
-    // get weather info for the day
+    // get weather info for the day Chengdu
     wx.request({
       url: "https://devapi.qweather.com/v7/weather/3d",
       method: "GET",
@@ -114,6 +118,70 @@ Page({
         //console.log(res)
         this.setData({
           weather_now: res.data.now,
+          ready: true
+        })
+      } 
+    })
+
+    // Jinniu
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/3d",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: 101270118
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weatherJinniu: res.data.daily[0]
+        })
+      }
+    })
+
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/now",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: 101270118
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weatherJinniuNow: res.data.now,
+          ready: true
+        })
+      } 
+    })
+
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/3d",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: 101270107
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weatherPidu: res.data.daily[0]
+        })
+      }
+    })
+
+    // Pidu
+    wx.request({
+      url: "https://devapi.qweather.com/v7/weather/now",
+      method: "GET",
+      data: {
+        key: this.data.key,
+        location: 101270107
+      },
+      success: (res) => {
+        //console.log(res)
+        this.setData({
+          weatherPiduNow: res.data.now,
           ready: true
         })
       } 
